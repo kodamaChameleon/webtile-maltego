@@ -1,0 +1,2 @@
+Owner,Author,Disclaimer,Description,Version,Name,UIName,URL,entityName,oAuthSettingId,transformSettingIDs,seedIDs
+KodamaChameleon,Kodama Chameleon <contact@kodamachameleon.com>,,Returns images from a website using webtile scraper,0.1,imgfromurl,Scrape images [webtile],https://transforms.kodamachameleon.com/run/imgfromurl,maltego.URL,,,demo
