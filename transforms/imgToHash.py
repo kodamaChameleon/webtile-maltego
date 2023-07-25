@@ -7,13 +7,12 @@ from PIL import Image
 import imagehash
 from io import BytesIO
 
-
 @registry.register_transform(
     display_name="Hash image [webtile]", 
     input_entity="maltego.Image",
     description='Returns perceptual hash of an image',
     settings=[],
-    output_entities=["maltego.Hash"]
+    output_entities=["maltego.hashtag"]
 )
 class imgToHash(DiscoverableTransform):
 
