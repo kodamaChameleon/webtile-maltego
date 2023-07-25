@@ -32,7 +32,7 @@ def find_alias(url):
         with open("regex.json", "r") as file:
             handle_regexes = json.load(file)["regex"]
 
-        # Append additional regexes to the list not covered by 
+        # Append additional regexes to the list not covered by WhatsMyName
         handle_regexes.extend([
                                r"facebook.com/([A-Za-z0-9_.]+)",
                                r"twitter.com/([A-Za-z0-9_.]+)",
