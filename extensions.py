@@ -1,4 +1,4 @@
-from maltego_trx.decorator_registry import TransformRegistry
+from maltego_trx.decorator_registry import TransformRegistry, TransformSet
 
 registry = TransformRegistry(
         owner="KodamaChameleon",
@@ -8,6 +8,8 @@ registry = TransformRegistry(
 )
 
 # The rest of these attributes are optional
+
+webtile_set = TransformSet("Webtile", "Webtile Transforms")
 
 # metadata
 registry.version = "0.1"

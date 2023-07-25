@@ -1,7 +1,7 @@
 import trio
 from maltego_trx.maltego import MaltegoTransform, MaltegoMsg
 from maltego_trx.transform import DiscoverableTransform
-from extensions import registry
+from extensions import registry,webtile_set
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -69,7 +69,8 @@ def find_phone_numbers(url):
     input_entity="maltego.URL",
     description='Scrape url for phone numbers',
     settings=[],
-    output_entities=["maltego.PhoneNumber"]
+    output_entities=["maltego.PhoneNumber"],
+    transform_set=webtile_set
 )
 class urlToPhone(DiscoverableTransform):
 

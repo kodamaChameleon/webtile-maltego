@@ -1,7 +1,7 @@
 import trio
 from maltego_trx.maltego import MaltegoTransform, MaltegoMsg
 from maltego_trx.transform import DiscoverableTransform
-from extensions import registry
+from extensions import registry,webtile_set
 import requests
 import re
 from datetime import datetime
@@ -102,7 +102,8 @@ def find_datetime(url):
     input_entity="maltego.URL",
     description='Scrape url for dates',
     settings=[],
-    output_entities=["maltego.DateTime"]
+    output_entities=["maltego.DateTime"],
+    transform_set=webtile_set
 )
 class urlToDate(DiscoverableTransform):
 

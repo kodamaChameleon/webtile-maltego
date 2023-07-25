@@ -1,7 +1,7 @@
 import trio
 from maltego_trx.maltego import MaltegoTransform, MaltegoMsg
 from maltego_trx.transform import DiscoverableTransform
-from extensions import registry
+from extensions import registry,webtile_set
 import requests
 from PIL import Image
 import imagehash
@@ -12,7 +12,8 @@ from io import BytesIO
     input_entity="maltego.Image",
     description='Returns perceptual hash of an image',
     settings=[],
-    output_entities=["maltego.hashtag"]
+    output_entities=["maltego.hashtag"],
+    transform_set=webtile_set
 )
 class imgToHash(DiscoverableTransform):
 
