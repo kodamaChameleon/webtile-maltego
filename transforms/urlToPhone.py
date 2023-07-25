@@ -65,7 +65,7 @@ def find_phone_numbers(url):
         return []
 
 @registry.register_transform(
-    display_name="URL to phone #'s [webtile]", 
+    display_name="URL to phone number(s) [webtile]", 
     input_entity="maltego.URL",
     description='Scrape url for phone numbers',
     settings=[],

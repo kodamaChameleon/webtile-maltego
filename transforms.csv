@@ -1,4 +1,4 @@
 Owner,Author,Disclaimer,Description,Version,Name,UIName,URL,entityName,oAuthSettingId,transformSettingIDs,seedIDs
 KodamaChameleon,Kodama Chameleon <contact@kodamachameleon.com>,,Returns perceptual hash of an image,0.1,imgtohash,Hash image [webtile],https://transforms.kodamachameleon.com/run/imgtohash,maltego.Image,,,demo
 KodamaChameleon,Kodama Chameleon <contact@kodamachameleon.com>,,Scrape url for dates,0.1,urltodate,URL to datetime(s) [webtile],https://transforms.kodamachameleon.com/run/urltodate,maltego.URL,,,demo
-KodamaChameleon,Kodama Chameleon <contact@kodamachameleon.com>,,Scrape url for phone numbers,0.1,urltophone,URL to phone #'s [webtile],https://transforms.kodamachameleon.com/run/urltophone,maltego.URL,,,demo
+KodamaChameleon,Kodama Chameleon <contact@kodamachameleon.com>,,Scrape url for phone numbers,0.1,urltophone,URL to phone number(s) [webtile],https://transforms.kodamachameleon.com/run/urltophone,maltego.URL,,,demo
