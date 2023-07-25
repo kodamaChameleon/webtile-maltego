@@ -15,45 +15,6 @@ def extract_domain(original_regex):
         return match.group(2)
     return None
 
-# Check for keywords related to social media handles
-def social_media_keyword(handle, soup):
-    keywords = [
-        "twitter",
-        "instagram",
-        "facebook",
-        "tiktok",
-        "threads",
-        "snapchat",
-        "linkedin",
-        "youtube",
-        "pinterest",
-        "reddit",
-        "twitch",
-        "discord",
-        "tumblr",
-        "vimeo",
-        "whatsapp",
-        "telegram",
-        "wechat",
-        "flickr",
-        "spotify",
-        "soundcloud",
-        "bandcamp",
-        "mixcloud",
-        "dribbble",
-        "behance",
-        "patreon",
-        "stackoverflow",
-    ]
-    found_keyword = False
-    element_containing_handle = soup.find(text=re.compile(re.escape(handle)))
-    if element_containing_handle:
-        for keyword in keywords:
-            if keyword in element_containing_handle.lower() or keyword in element_containing_handle.parent.text.lower():
-                return keyword
-
-    return False
-
 # WhatsMyName reverselookup :)
 def find_alias(url):
     try:
@@ -72,8 +33,7 @@ def find_alias(url):
             handle_regexes = json.load(file)["regex"]
 
         # Append additional regexes to the list not covered by 
-        handle_regexes.extend([r"@([A-Za-z0-9_]+)",
-                               r"\\$([A-Za-z0-9_]+)",
+        handle_regexes.extend([
                                r"facebook.com/([A-Za-z0-9_.]+)",
                                r"twitter.com/([A-Za-z0-9_.]+)",
                             ])
@@ -83,21 +43,11 @@ def find_alias(url):
         for handle_regex in handle_regexes:
             handle_matches = re.findall(handle_regex, webpage_content)
             for match in handle_matches:
-                # Double check for other indicators of social media handles for generic handles
-                if handle_regex in [r"@([A-Za-z0-9_]+)", r"\\$([A-Za-z0-9_]+)"]:
-                    keyword = social_media_keyword(match, soup)
-                    if keyword:
-                        if match in social_media_handles:
-                            if handle_regex not in social_media_handles[match]:
-                                social_media_handles[match].append(keyword)
-                        else:
-                            social_media_handles[match] = [keyword]
+                if match in social_media_handles:
+                    if handle_regex not in social_media_handles[match]:
+                        social_media_handles[match].append(extract_domain(handle_regex))
                 else:
-                    if match in social_media_handles:
-                        if handle_regex not in social_media_handles[match]:
-                            social_media_handles[match].append(extract_domain(handle_regex))
-                    else:
-                        social_media_handles[match] = [extract_domain(handle_regex)]
+                    social_media_handles[match] = [extract_domain(handle_regex)]
 
         return social_media_handles
 
@@ -111,7 +61,7 @@ def find_alias(url):
 @registry.register_transform(
     display_name="URL to alias [webtile]", 
     input_entity="maltego.URL",
-    description='Scrape url for alias',
+    description='Scrape url for alias (aka. reverse WhatsMyName lookup)',
     settings=[],
     output_entities=["maltego.Alias"],
     transform_set=webtile_set
