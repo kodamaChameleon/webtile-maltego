@@ -7,6 +7,14 @@ from bs4 import BeautifulSoup
 import re
 import json
 
+# Function to extract domain name from a URL
+def extract_domain(original_regex):
+    domain_extract_regex = r"(https?://)?([A-Za-z0-9_.-]+)"
+    match = re.match(domain_extract_regex, original_regex)
+    if match:
+        return match.group(2)
+    return None
+
 # Check for keywords related to social media handles
 def social_media_keyword(handle, soup):
     keywords = [
@@ -42,11 +50,11 @@ def social_media_keyword(handle, soup):
     if element_containing_handle:
         for keyword in keywords:
             if keyword in element_containing_handle.lower() or keyword in element_containing_handle.parent.text.lower():
-                found_keyword = True
-                break
+                return keyword
 
-    return found_keyword
+    return False
 
+# WhatsMyName reverselookup :)
 def find_alias(url):
     try:
         headers = {
@@ -63,32 +71,42 @@ def find_alias(url):
         with open("regex.json", "r") as file:
             handle_regexes = json.load(file)["regex"]
 
-        # Append additional regexes to the list
+        # Append additional regexes to the list not covered by 
         handle_regexes.extend([r"@([A-Za-z0-9_]+)",
                                r"\\$([A-Za-z0-9_]+)",
-                                r"facebook.com/([A-Za-z0-9_.]+)",
-                               ])
+                               r"facebook.com/([A-Za-z0-9_.]+)",
+                               r"twitter.com/([A-Za-z0-9_.]+)",
+                            ])
 
         # Find all matches of the handle regexes in the webpage content
-        social_media_handles = set()
+        social_media_handles = {}
         for handle_regex in handle_regexes:
             handle_matches = re.findall(handle_regex, webpage_content)
             for match in handle_matches:
                 # Double check for other indicators of social media handles for generic handles
                 if handle_regex in [r"@([A-Za-z0-9_]+)", r"\\$([A-Za-z0-9_]+)"]:
-                    if social_media_keyword(match, soup):
-                        social_media_handles.add(match)
+                    keyword = social_media_keyword(match, soup)
+                    if keyword:
+                        if match in social_media_handles:
+                            if handle_regex not in social_media_handles[match]:
+                                social_media_handles[match].append(keyword)
+                        else:
+                            social_media_handles[match] = [keyword]
                 else:
-                    social_media_handles.add(match)
+                    if match in social_media_handles:
+                        if handle_regex not in social_media_handles[match]:
+                            social_media_handles[match].append(extract_domain(handle_regex))
+                    else:
+                        social_media_handles[match] = [extract_domain(handle_regex)]
 
-        return list(social_media_handles)
+        return social_media_handles
 
     except requests.exceptions.RequestException as e:
         #print("Error fetching the URL:", e)
-        return []
+        return {}
     except Exception as e:
         #print("An error occurred:", e)
-        return []
+        return {}
 
 @registry.register_transform(
     display_name="URL to alias [webtile]", 
@@ -109,5 +127,7 @@ class urlToAlias(DiscoverableTransform):
 
             for a in alias:
                 alias_name = response.addEntity("maltego.Alias", value=a)
+                for d in alias[a]:
+                    alias_name.addProperty(d, value = a)
 
         trio.run(main)  # running our async code in a non-async code
