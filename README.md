@@ -1,5 +1,7 @@
-# Webtile-Maltego
+# Webtile
 ### Crawl the Web Like a Reptile
+
+<img src="https://media.tenor.com/Ltvoyg1iBx8AAAAC/chameleon-glasses.gif">
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
@@ -12,7 +14,7 @@ Release: TBD
 Scrape web pages by their URL into Maltego entities.
 
 ## 🛠️ Setup
-For more detailed instructions, read the [Wiki](https://github.com/kodamaChameleon/webtile-maltego/wiki)
+
 ### Requirements
 - Maltego 4.3.0
 - Python 3.11.2
@@ -28,9 +30,16 @@ For more detailed instructions, read the [Wiki](https://github.com/kodamaChamele
    
 ## 🧙 Features
 
-<img src="img/demo.PNG">  
+| Name       | Description                                            | Input Type    | Output Type          |
+|------------|--------------------------------------------------------|---------------|----------------------|
+| imgToHash  | Returns perceptual hash of an image                    | maltego.Image | maltego.HashTag      |
+| urlToAlias | Scrape url for alias (aka. reverse WhatsMyName lookup) | maltego.URL   | maltego.Alias        |
+| urlToDate  | Scrape url for dates                                   | maltego.URL   | maltego.DateTime     |
+| urlToEmail | Scrape url for email addresses                         | maltego.URL   | maltego.EmailAddress |
+| urlToPhone | Scrape url for phone numbers                           | maltego.URL   | maltego.PhoneNumber  |
    
 ## 📜 License
-![image](https://img.shields.io/badge/License-GNU%20GPL-blue)
+<img src="https://creativecommons.org/images/deed/FreeCulturalWorks_seal_x2.jpg" height="100px">
 
-[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.fr.html)
+[Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)  
+Copyright (C) 2023 KodamaChameleon
