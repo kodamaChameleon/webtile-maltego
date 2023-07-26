@@ -1,5 +1,4 @@
 import subprocess
-import trio
 import json
 import re
 import requests
