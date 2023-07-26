@@ -1,1 +1,2 @@
 maltego-trx==1.6.0
+imagehash==4.3.1
