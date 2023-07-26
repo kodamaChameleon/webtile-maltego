@@ -13,6 +13,8 @@ Release: TBD
 
 Scrape web pages by their URL into Maltego entities.
 
+Please use this tool ethically by respecting people's privacy and only collecting intelligence where explicit permission has been granted or otherwise legally qualified to do so. We are not responsible for any illegal use.
+
 ## 🛠️ Setup
 
 ### Requirements
