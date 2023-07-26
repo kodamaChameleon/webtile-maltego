@@ -32,7 +32,7 @@ def find_emails(url):
 @registry.register_transform(
     display_name="URL to email address(es) [webtile]", 
     input_entity="maltego.URL",
-    description='Scrape url for phone numbers',
+    description='Scrape url for email addresses',
     settings=[],
     output_entities=["maltego.EmailAddress"],
     transform_set=webtile_set
