@@ -32,6 +32,8 @@ Please use this tool ethically by respecting people's privacy and only collectin
    
 ## 🧙 Features
 
+<img src="./img/webtile_demo.png" width="600px">
+
 | Name       | Description                                            | Input Type    | Output Type          |
 |------------|--------------------------------------------------------|---------------|----------------------|
 | imgToHash  | Returns perceptual hash of an image                    | maltego.Image | maltego.HashTag      |
