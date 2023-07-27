@@ -39,6 +39,7 @@ def create_regex_file(url, output_file):
                         "URL": url,
                         "License": data.get("license", ""),
                         "authors": data.get("authors", ""),
+                        "Edited By": "KodamaChameleon",
                     },
                     "regex": regex_list
                 }
