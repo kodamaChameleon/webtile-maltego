@@ -7,11 +7,11 @@
 
 Version: 1.0.0-beta
 
-Release: TBD
+Release: 27 July, 2023
 
 ## 💎 About
 
-Scrape web pages by their URL into Maltego entities.
+Scrape web pages by their URL into Maltego entities. This is a noisy🔊 form of reconaissance, VPN recommended if OPSEC is a concern.
 
 Please use this tool ethically by respecting people's privacy and only collecting intelligence where explicit permission has been granted or otherwise legally qualified to do so. We are not responsible for any illegal use.
 
@@ -36,13 +36,15 @@ Please use this tool ethically by respecting people's privacy and only collectin
 
 <img src="./img/webtile_demo.png" width="600px">
 
-| Name       | Description                                            | Input Type    | Output Type          |
-|------------|--------------------------------------------------------|---------------|----------------------|
-| imgToHash  | Returns perceptual hash of an image                    | maltego.Image | maltego.HashTag      |
-| urlToAlias | Scrape url for alias (aka. reverse WhatsMyName lookup) | maltego.URL   | maltego.Alias        |
-| urlToDate  | Scrape url for dates                                   | maltego.URL   | maltego.DateTime     |
-| urlToEmail | Scrape url for email addresses                         | maltego.URL   | maltego.EmailAddress |
-| urlToPhone | Scrape url for phone numbers                           | maltego.URL   | maltego.PhoneNumber  |
+| Name       | Description                                            | Input Type    | Output Type          | Notes                                                                                 |
+|------------|--------------------------------------------------------|---------------|----------------------|---------------------------------------------------------------------------------------|
+| imgToHash  | Returns perceptual hash of an image                    | maltego.Image | maltego.HashTag      | Use "To Images [Found on web page]" for initial scrape                                |
+| urlToAlias | Scrape url for alias (aka. reverse WhatsMyName lookup) | maltego.URL   | maltego.Alias        | Pairs well with [Maltego-WhatsMyName](https://github.com/TURROKS/Maltego_WhatsMyName) |
+| urlToDate  | Scrape url for dates                                   | maltego.URL   | maltego.DateTime     |                                                                                       |
+| urlToEmail | Scrape url for email addresses                         | maltego.URL   | maltego.EmailAddress |                                                                                       |
+| urlToPhone | Scrape url for phone numbers                           | maltego.URL   | maltego.PhoneNumber  |                                                                                       |
+
+*Have another recommended entity type to scrape? Great! Let us know by creating an issue.*
    
 ## 📜 License
 <img src="https://creativecommons.org/images/deed/FreeCulturalWorks_seal_x2.jpg" height="100px">
