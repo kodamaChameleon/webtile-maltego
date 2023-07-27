@@ -13,6 +13,8 @@ Release: TBD
 
 Scrape web pages by their URL into Maltego entities.
 
+Please use this tool ethically by respecting people's privacy and only collecting intelligence where explicit permission has been granted or otherwise legally qualified to do so. We are not responsible for any illegal use.
+
 ## 🛠️ Setup
 
 ### Requirements
@@ -22,13 +24,18 @@ Scrape web pages by their URL into Maltego entities.
    
 ### Installation
 ```
-   cd ~/.local/bin
    git clone https://github.com/kodamaChameleon/webtile-maltego.git
    cd webtile-maltego
    python3 setup.py
 ```
+
+🚨 **Important!** The "Edit value" for the URL entity must be set to URL. You can check/edit this by going to Entities -> Manage Entities -> URL (...) -> Display Settings. Some versions of Maltego default to Short title which does not include the necessary protocol or full path for these transforms to function correctly.
+
+<img src="./img/edit-value.png" width="300px">
    
 ## 🧙 Features
+
+<img src="./img/webtile_demo.png" width="600px">
 
 | Name       | Description                                            | Input Type    | Output Type          |
 |------------|--------------------------------------------------------|---------------|----------------------|
