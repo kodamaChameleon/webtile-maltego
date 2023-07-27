@@ -24,11 +24,14 @@ Please use this tool ethically by respecting people's privacy and only collectin
    
 ### Installation
 ```
-   cd ~/.local/bin
    git clone https://github.com/kodamaChameleon/webtile-maltego.git
    cd webtile-maltego
    python3 setup.py
 ```
+
+🚨 **Important!** The "Edit value" for the URL entity must be set to URL. You can check/edit this by going to Entities -> Manage Entities -> URL (...) -> Display Settings.
+
+<img src="./img/edit-value.png" width="300px">
    
 ## 🧙 Features
 
