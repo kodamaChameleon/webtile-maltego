@@ -19,8 +19,7 @@ Please use this tool ethically by respecting people's privacy and only collectin
 
 ### Requirements
 - Maltego 4.3.0
-- Python 3.11.2
-   - maltego-trx 1.6.0
+- [Python 3.11.2](./requirements.txt)
    
 ### Installation
 ```
