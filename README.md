@@ -29,7 +29,7 @@ Please use this tool ethically by respecting people's privacy and only collectin
    python3 setup.py
 ```
 
-🚨 **Important!** The "Edit value" for the URL entity must be set to URL. You can check/edit this by going to Entities -> Manage Entities -> URL (...) -> Display Settings.
+🚨 **Important!** The "Edit value" for the URL entity must be set to URL. You can check/edit this by going to Entities -> Manage Entities -> URL (...) -> Display Settings. Some versions of Maltego default to Short title which does not include the necessary protocol or full path for these transforms to function correctly.
 
 <img src="./img/edit-value.png" width="300px">
    
