@@ -1,5 +1,3 @@
-# Webtile
-
 <img src="./img/webtile2.png">
 
 ### Crawl the Web Like a Reptile
