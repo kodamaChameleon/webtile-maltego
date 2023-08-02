@@ -1,7 +1,8 @@
 # Webtile
-### Crawl the Web Like a Reptile
 
-<img src="./img/webtile.png" height="300px">
+<img src="./img/webtile2.png">
+
+### Crawl the Web Like a Reptile
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
