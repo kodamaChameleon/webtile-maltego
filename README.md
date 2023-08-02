@@ -1,7 +1,7 @@
 # Webtile
 ### Crawl the Web Like a Reptile
 
-<img src="https://media.tenor.com/Ltvoyg1iBx8AAAAC/chameleon-glasses.gif">
+<img src="./img/webtile.png" height="300px">
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
