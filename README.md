@@ -2,7 +2,7 @@
 
 ### Crawl the Web Like a Reptile
 
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 Version: 1.0.0-beta
 
